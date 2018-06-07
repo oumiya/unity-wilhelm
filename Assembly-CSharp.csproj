@@ -62,6 +62,7 @@
     <Compile Include="Assets\Scripts\autoRotation.cs" />
     <Compile Include="Assets\Scripts\Controller2D.cs" />
     <Compile Include="Assets\Scripts\DestroyArea.cs" />
+    <Compile Include="Assets\Scripts\MouseScript.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\testMove.cs" />
     <Reference Include="UnityEditor.StandardEvents">
