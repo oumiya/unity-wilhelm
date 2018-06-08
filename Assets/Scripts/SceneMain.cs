@@ -1,0 +1,38 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SceneMain : MonoBehaviour
+{
+
+    private enum STATE
+    {
+        INIT = 0,
+        PLAY,
+        GAME_OVER
+    };
+    private STATE mState = STATE.INIT;
+
+    void Update()
+    {
+        switch (mState)
+        {
+            case STATE.INIT:
+                // 初期化処理
+                break;
+            case STATE.PLAY:
+                // プレイ中
+                break;
+            case STATE.GAME_OVER:
+                // ゲームオーバー
+                break;
+        }
+    }
+    private GameController mGame;
+
+    void Awake()
+    {
+        mGame = GameController.Instance;
+        mGame.InitGame();
+    }
+}

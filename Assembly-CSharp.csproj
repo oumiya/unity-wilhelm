@@ -62,8 +62,10 @@
     <Compile Include="Assets\Scripts\autoRotation.cs" />
     <Compile Include="Assets\Scripts\Controller2D.cs" />
     <Compile Include="Assets\Scripts\DestroyArea.cs" />
+    <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\MouseScript.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\SceneMain.cs" />
     <Compile Include="Assets\Scripts\testMove.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/suzu/Documents/GitHub/unity-wilhelm/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

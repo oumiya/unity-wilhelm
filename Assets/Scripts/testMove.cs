@@ -10,7 +10,7 @@ public class testMove : MonoBehaviour {
                var force = (transform.forward + transform.right) * 100.0f;
                GetComponent<Rigidbody>().AddForce(force, ForceMode.VelocityChange);
         */
-        GetComponent<Rigidbody2D>().velocity = transform.right.normalized * 10;
+ //       GetComponent<Rigidbody2D>().velocity = transform.right.normalized * 10;
     }
 
     // Update is called once per frame
