@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScene.unity
     guid: 719c6f8c2fde2c04ab3a53cee69dc218
   - enabled: 1
+    path: Assets/Scenes/ScoreAttackScene.unity
+    guid: a289c7a8cbae0274cb7de7974f93b4b5
+  - enabled: 1
     path: Assets/Scenes/StoryScene.unity
-    guid: 9e086f170d08d0e4598fbce2d66ba91d
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    guid: 743f9951f07ca284a881ce9a6a163d88
   m_configObjects: {}

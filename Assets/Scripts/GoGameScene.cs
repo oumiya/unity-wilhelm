@@ -13,10 +13,11 @@ public class GoGameScene : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		// ストーリーモードをクリックしたらストーリーモードへシーンを遷移
-        if (Input.GetMouseButtonDown(0))
+        /*if (Input.GetMouseButtonDown(0))
         {
             SceneManager.LoadScene("StoryScene");
         }
+        */
 
         // 打ち放題モードをクリックしたら打ち放題モードへシーンを遷移
 	}
