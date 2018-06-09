@@ -15,6 +15,7 @@ public class Arrow : MonoBehaviour {
     private enum ArrowStatus { Flyng, Hits };
     private ArrowStatus arrowState;
     private Rigidbody2D rigidbody2D;
+    public GameObject blood;
 
     // Use this for initialization
     void Start () {
@@ -55,5 +56,10 @@ public class Arrow : MonoBehaviour {
         rigidbody2D.simulated = false;
         Player player = GameObject.Find("player").GetComponent<Player>();
         player.SetStateReload();
+
+        if (collision.gameObject.tag.Equals("Son"))
+        {
+            Instantiate(blood, transform.position, Quaternion.identity);
+        }
     }
 }

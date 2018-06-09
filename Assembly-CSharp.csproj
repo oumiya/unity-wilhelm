@@ -62,6 +62,7 @@
     <Compile Include="Assets\Scripts\Apple.cs" />
     <Compile Include="Assets\Scripts\Arrow.cs" />
     <Compile Include="Assets\Scripts\AutoRotation.cs" />
+    <Compile Include="Assets\Scripts\DestroyGameObject.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\GoGameScene.cs" />
     <Compile Include="Assets\Scripts\LeftHand.cs" />
@@ -69,11 +70,11 @@
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\SceneMain.cs" />
     <Compile Include="Assets\Scripts\TestMove.cs" />
-    <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/sige0/Documents/GitHub/unity-wilhelm/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/sige0/Documents/GitHub/unity-wilhelm/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PackageManagerUI.Editor">
+      <HintPath>C:/Users/sige0/Documents/GitHub/unity-wilhelm/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
