@@ -9,7 +9,8 @@ public class Player : MonoBehaviour {
     public GameObject arrow;
     // Use this for initialization
     void Start () {
-		
+        GameObject wt_string_1= GameObject.Find("wt_string_1");
+        wt_string_1.GetComponent<Renderer>().enabled = false;
 	}
 
     // Update is called once per frame
