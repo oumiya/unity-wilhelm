@@ -62,6 +62,13 @@ public class Arrow : MonoBehaviour {
         if (collision.gameObject.tag.Equals("Son"))
         {
             Instantiate(blood, transform.position, Quaternion.identity);
+            if (SceneManager.GetActiveScene().name == "ScoreAttackScene")
+            {
+                if (collision.gameObject.tag.Equals("Son"))
+                {
+                    FindObjectOfType<Score>().AddPoint(1);
+                }
+            }
 
             if (SceneManager.GetActiveScene().name == "StoryScene")
             {
@@ -87,11 +94,7 @@ public class Arrow : MonoBehaviour {
                 {
                     FindObjectOfType<Score>().AddPoint(100);
                 }
-                if (collision.gameObject.tag.Equals("Son"))
-                {
-                    FindObjectOfType<Score>().AddPoint(1);
-                }
-            }
+           }
 
             if (SceneManager.GetActiveScene().name == "StoryScene")
             {

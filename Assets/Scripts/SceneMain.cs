@@ -41,12 +41,23 @@ public class SceneMain : MonoBehaviour
                         timer = 0.0f;
                         timtxt = timer.ToString("F");
                         timetextbox.text = timtxt;
+                        FindObjectOfType<Score>().SetPointMagnification(0);
                         mState = STATE.GAME_OVER;
+                        timer = 5.0f;
                     }
                 };
                 break;
             case STATE.GAME_OVER:
                 // ゲームオーバー
+                if (timer > 0.0f)
+                {
+                    timer -= Time.deltaTime;
+                }
+                else
+                {
+                    SceneManager.LoadScene("TitleScene");
+                }
+
                 break;
         }
     }
