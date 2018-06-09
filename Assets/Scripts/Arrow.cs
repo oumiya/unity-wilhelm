@@ -58,53 +58,59 @@ public class Arrow : MonoBehaviour {
         rigidbody2D.simulated = false;
         Player player = GameObject.Find("player").GetComponent<Player>();
         player.SetStateReload();
-        if (SceneManager.GetActiveScene().name == "ScoreAttackScene")
-        {
-            if (collision.gameObject.tag.Equals("Apple"))
-            {
-                FindObjectOfType<Score>().AddPoint(100);
-            }
-            if (collision.gameObject.tag.Equals("Son"))
-            {
-                FindObjectOfType<Score>().AddPoint(1);
-            }
-        }
+
         if (collision.gameObject.tag.Equals("Son"))
         {
             Instantiate(blood, transform.position, Quaternion.identity);
 
-            BGM bgm = GameObject.Find("BGM").GetComponent<BGM>();
-            bgm.GameOverBGM();
-            Instantiate(paper, new Vector3(-5.8f, 4.8f, -9.8f), Quaternion.identity);
-            Instantiate(paper, new Vector3(-2.8f, 4.8f, -9.8f), Quaternion.identity);
-            Instantiate(paper, new Vector3(0f, 4.8f, -9.8f), Quaternion.identity);
-            Instantiate(paper, new Vector3(3f, 4.8f, -9.8f), Quaternion.identity);
-            Instantiate(paper, new Vector3(6f, 4.8f, -9.8f), Quaternion.identity);
-            player.SetStateFreeze();
+            if (SceneManager.GetActiveScene().name == "StoryScene")
+            {
+                BGM bgm = GameObject.Find("BGM").GetComponent<BGM>();
+                bgm.GameOverBGM();
+                player.SetStateFreeze();
 
-            GameObject game_over = GameObject.Find("game_over");
-            game_over.GetComponent<Renderer>().enabled = true;
+                GameObject game_over = GameObject.Find("game_over");
+                game_over.GetComponent<Renderer>().enabled = true;
 
-            GameObject lose_text = GameObject.Find("lose_text");
-            lose_text.GetComponent<Renderer>().enabled = true;
+                GameObject lose_text = GameObject.Find("lose_text");
+                lose_text.GetComponent<Renderer>().enabled = true;
+            }
+
+            return;
         }
 
         if (collision.gameObject.tag.Equals("Apple"))
         {
-            BGM bgm = GameObject.Find("BGM").GetComponent<BGM>();
-            bgm.FinishBGM();
-            Instantiate(paper, new Vector3(-5.8f, 4.8f, -9.8f), Quaternion.identity);
-            Instantiate(paper, new Vector3(-2.8f, 4.8f, -9.8f), Quaternion.identity);
-            Instantiate(paper, new Vector3(0f, 4.8f, -9.8f), Quaternion.identity);
-            Instantiate(paper, new Vector3(3f, 4.8f, -9.8f), Quaternion.identity);
-            Instantiate(paper, new Vector3(6f, 4.8f, -9.8f), Quaternion.identity);
-            player.SetStateFreeze();
+            if (SceneManager.GetActiveScene().name == "ScoreAttackScene")
+            {
+                if (collision.gameObject.tag.Equals("Apple"))
+                {
+                    FindObjectOfType<Score>().AddPoint(100);
+                }
+                if (collision.gameObject.tag.Equals("Son"))
+                {
+                    FindObjectOfType<Score>().AddPoint(1);
+                }
+            }
 
-            GameObject clear = GameObject.Find("clear");
-            clear.GetComponent<Renderer>().enabled = true;
+            if (SceneManager.GetActiveScene().name == "StoryScene")
+            {
 
-            GameObject win_text = GameObject.Find("win_text");
-            win_text.GetComponent<Renderer>().enabled = true;
+                BGM bgm = GameObject.Find("BGM").GetComponent<BGM>();
+                bgm.FinishBGM();
+                Instantiate(paper, new Vector3(-5.8f, 4.8f, -9.8f), Quaternion.identity);
+                Instantiate(paper, new Vector3(-2.8f, 4.8f, -9.8f), Quaternion.identity);
+                Instantiate(paper, new Vector3(0f, 4.8f, -9.8f), Quaternion.identity);
+                Instantiate(paper, new Vector3(3f, 4.8f, -9.8f), Quaternion.identity);
+                Instantiate(paper, new Vector3(6f, 4.8f, -9.8f), Quaternion.identity);
+                player.SetStateFreeze();
+
+                GameObject clear = GameObject.Find("clear");
+                clear.GetComponent<Renderer>().enabled = true;
+
+                GameObject win_text = GameObject.Find("win_text");
+                win_text.GetComponent<Renderer>().enabled = true;
+            }
         }
     }
 }
