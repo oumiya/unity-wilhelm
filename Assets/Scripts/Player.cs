@@ -53,10 +53,8 @@ public class Player : MonoBehaviour {
                 {
                     GameObject LeftHand = GameObject.Find("LeftHand");
                     GameObject DrawString = GameObject.Find("DrawString");
-                    GameObject DummyArrow = GameObject.Find("DummyArrow");
-                    LeftHand.transform.rotation = Quaternion.LookRotation(Vector3.forward, diff);
-                    DrawString.transform.rotation = Quaternion.LookRotation(Vector3.forward, diff);
-                    DummyArrow.transform.rotation = Quaternion.LookRotation(Vector3.forward, diff);
+                    LeftHand.transform.rotation = Quaternion.FromToRotation(Vector3.left, diff);
+                    DrawString.transform.rotation = LeftHand.transform.rotation;
                 }
             }
 
@@ -79,11 +77,9 @@ public class Player : MonoBehaviour {
 
                 GameObject drawString = GameObject.Find("DrawString");
                 GameObject releaseString = GameObject.Find("ReleaseString");
-                GameObject dummyArrow = GameObject.Find("DummyArrow");
-
+                releaseString.transform.rotation = drawString.transform.rotation;
                 drawString.GetComponent<Renderer>().enabled = false;
                 releaseString.GetComponent<Renderer>().enabled = true;
-                dummyArrow.GetComponent<Renderer>().enabled = false;
 
                 tellState = TellStatus.Fire;
             }
@@ -100,8 +96,6 @@ public class Player : MonoBehaviour {
             drawString.GetComponent<Renderer>().enabled = true;
             GameObject releaseString = GameObject.Find("ReleaseString");
             releaseString.GetComponent<Renderer>().enabled = false;
-            GameObject dummyArrow = GameObject.Find("DummyArrow");
-            dummyArrow.GetComponent<Renderer>().enabled = true;
             tellState = TellStatus.Idle;
         }
 
