@@ -16,6 +16,7 @@ public class Arrow : MonoBehaviour {
     private ArrowStatus arrowState;
     private Rigidbody2D rigidbody2D;
     public GameObject blood;
+    public GameObject paper;
 
     // Use this for initialization
     void Start () {
@@ -60,6 +61,39 @@ public class Arrow : MonoBehaviour {
         if (collision.gameObject.tag.Equals("Son"))
         {
             Instantiate(blood, transform.position, Quaternion.identity);
+
+            BGM bgm = GameObject.Find("BGM").GetComponent<BGM>();
+            bgm.GameOverBGM();
+            Instantiate(paper, new Vector3(-5.8f, 4.8f, -9.8f), Quaternion.identity);
+            Instantiate(paper, new Vector3(-2.8f, 4.8f, -9.8f), Quaternion.identity);
+            Instantiate(paper, new Vector3(0f, 4.8f, -9.8f), Quaternion.identity);
+            Instantiate(paper, new Vector3(3f, 4.8f, -9.8f), Quaternion.identity);
+            Instantiate(paper, new Vector3(6f, 4.8f, -9.8f), Quaternion.identity);
+            player.SetStateFreeze();
+
+            GameObject game_over = GameObject.Find("game_over");
+            game_over.GetComponent<Renderer>().enabled = true;
+
+            GameObject lose_text = GameObject.Find("lose_text");
+            lose_text.GetComponent<Renderer>().enabled = true;
+        }
+
+        if (collision.gameObject.tag.Equals("Apple"))
+        {
+            BGM bgm = GameObject.Find("BGM").GetComponent<BGM>();
+            bgm.FinishBGM();
+            Instantiate(paper, new Vector3(-5.8f, 4.8f, -9.8f), Quaternion.identity);
+            Instantiate(paper, new Vector3(-2.8f, 4.8f, -9.8f), Quaternion.identity);
+            Instantiate(paper, new Vector3(0f, 4.8f, -9.8f), Quaternion.identity);
+            Instantiate(paper, new Vector3(3f, 4.8f, -9.8f), Quaternion.identity);
+            Instantiate(paper, new Vector3(6f, 4.8f, -9.8f), Quaternion.identity);
+            player.SetStateFreeze();
+
+            GameObject clear = GameObject.Find("clear");
+            clear.GetComponent<Renderer>().enabled = true;
+
+            GameObject win_text = GameObject.Find("win_text");
+            win_text.GetComponent<Renderer>().enabled = true;
         }
     }
 }

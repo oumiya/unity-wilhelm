@@ -196,6 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blood: {fileID: 1195292779824600, guid: 4df66395e63381640abf951d98d9039d, type: 2}
+  paper: {fileID: 1665458234296348, guid: 46ab2f34ca90c8342ab6f43bb118b3b1, type: 2}
 --- !u!212 &212300340746806178
 SpriteRenderer:
   m_ObjectHideFlags: 1

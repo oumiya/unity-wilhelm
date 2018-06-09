@@ -6,7 +6,7 @@ public class Player : MonoBehaviour {
     private Vector3 pointA;
     private Vector3 pointB;
 
-    private enum TellStatus { Idle, Draw, Fire, Reload};
+    private enum TellStatus { Idle, Draw, Fire, Reload, Freeze};
     private TellStatus tellState;
 
     private AudioSource soundStress;
@@ -99,10 +99,20 @@ public class Player : MonoBehaviour {
             tellState = TellStatus.Idle;
         }
 
+        if (tellState == TellStatus.Freeze)
+        {
+            // 操作を受け付けない
+        }
+
     }
 
     public void SetStateReload()
     {
         tellState = TellStatus.Reload;
+    }
+
+    public void SetStateFreeze()
+    {
+        tellState = TellStatus.Freeze;
     }
 }
