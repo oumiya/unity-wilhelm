@@ -16,6 +16,11 @@ WILLIAM TELL
  https://oumiyas676.wixsite.com/denki-bu
 
 ## クレジット
+紙吹雪のパーティクル
+全画面エフェクト　紙吹雪
+ぴぽや
+http://blog.pipoya.net/blog-entry-446.html
+
 ゲームクリア時のジングル  
 パーティー開幕  
 Music is VFR  
