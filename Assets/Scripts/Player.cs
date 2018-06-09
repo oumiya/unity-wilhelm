@@ -44,6 +44,22 @@ public class Player : MonoBehaviour {
                 soundStress.Play();
             }
 
+            if(Input.GetMouseButton(0)){
+
+                pointB = transform.position;
+                Vector3 diff = pointB;
+                diff = diff - pointA;
+                if (diff.magnitude > 0.01)
+                {
+                    GameObject LeftHand = GameObject.Find("LeftHand");
+                    GameObject DrawString = GameObject.Find("DrawString");
+                    GameObject DummyArrow = GameObject.Find("DummyArrow");
+                    LeftHand.transform.rotation = Quaternion.LookRotation(Vector3.forward, diff);
+                    DrawString.transform.rotation = Quaternion.LookRotation(Vector3.forward, diff);
+                    DummyArrow.transform.rotation = Quaternion.LookRotation(Vector3.forward, diff);
+                }
+            }
+
             if (Input.GetMouseButtonUp(0))
             {
                 pointB = transform.position;
