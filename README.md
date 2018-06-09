@@ -16,9 +16,13 @@ WILLIAM TELL
  https://oumiyas676.wixsite.com/denki-bu
 
 ** CREDIT
+森の環境音
+Forest Ambience
+Alexander
+http://www.orangefreesounds.com/forest-ambience/
+
 
 弓を引き絞る音
-
 Tension Wood Stress Sound
 Mike Koenig 
 http://soundbible.com/2109-Tension-Wood-Stress.html
