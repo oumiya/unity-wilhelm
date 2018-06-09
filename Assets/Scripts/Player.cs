@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
-    private Vector2 pointA;
-    private Vector2 pointB;
+    private Vector3 pointA;
+    private Vector3 pointB;
 
     private enum TellStatus { Idle, Draw, Fire, Reload};
     private TellStatus tellState;
@@ -37,6 +37,20 @@ public class Player : MonoBehaviour {
 
         if (tellState == TellStatus.Draw)
         {
+            GameObject leftHand = GameObject.Find("LeftHand");
+            Vector3 leftHandDiff = pointA - transform.position;
+            leftHand.transform.rotation = Quaternion.FromToRotation(Vector3.right, leftHandDiff);
+
+            GameObject drawString = GameObject.Find("DrawString");
+            drawString.transform.rotation = leftHand.transform.rotation;
+
+            GameObject releaseString = GameObject.Find("ReleaseString");
+            releaseString.transform.rotation = leftHand.transform.rotation;
+
+            GameObject dummyArrow = GameObject.Find("DummyArrow");
+            dummyArrow.transform.rotation = leftHand.transform.rotation;
+
+
             if (!soundStress.isPlaying)
             {
                 soundStress.Play();
@@ -45,22 +59,24 @@ public class Player : MonoBehaviour {
             if (Input.GetMouseButtonUp(0))
             {
                 pointB = transform.position;
-                Vector2 diff = pointB;
+                Vector3 diff = pointB;
                 diff = diff - pointA;
                 if (diff.magnitude > 0.01)
                 {
                     //               transform.rotation = Quaternion.LookRotation(Vector3.forward, diff) * Quaternion.Euler(0, 0, -90f);
-                    GameObject shot = Instantiate(arrow, transform.position, transform.rotation);
+                    //GameObject shot = Instantiate(arrow, transform.position, transform.rotation);
+                    Vector3 defaultPosition = new Vector3(-5.42f, -0.6900001f, 0f);
+                    GameObject shot = Instantiate(arrow, defaultPosition, transform.rotation);
                     shot.GetComponent<Rigidbody2D>().velocity = -diff * 5f;
                     shot.transform.rotation = Quaternion.LookRotation(Vector3.forward, -diff);
                 }
 
                 soundStress.Stop();
-                GameObject drawString = GameObject.Find("DrawString");
+                
                 drawString.GetComponent<Renderer>().enabled = true;
-                GameObject releaseString = GameObject.Find("ReleaseString");
+                
                 releaseString.GetComponent<Renderer>().enabled = false;
-                GameObject dummyArrow = GameObject.Find("DummyArrow");
+                
                 dummyArrow.GetComponent<Renderer>().enabled = false;
 
                 tellState = TellStatus.Fire;
