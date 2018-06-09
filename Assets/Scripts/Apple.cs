@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Control : MonoBehaviour {
+public class Apple : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

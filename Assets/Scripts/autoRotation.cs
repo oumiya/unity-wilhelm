@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class autoRotation : MonoBehaviour {
+public class AutoRotation : MonoBehaviour {
     private Vector2 prev; //前回の座標保持
 
     // Use this for initialization
