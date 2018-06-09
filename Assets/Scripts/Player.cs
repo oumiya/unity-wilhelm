@@ -16,8 +16,8 @@ public class Player : MonoBehaviour {
     void Start () {
         tellState = TellStatus.Idle;
 
-        GameObject drawString = GameObject.Find("DrawString");
-        drawString.GetComponent<Renderer>().enabled = false;
+        GameObject releaseString = GameObject.Find("ReleaseString");
+        releaseString.GetComponent<Renderer>().enabled = false;
 
         soundStress = GetComponent<AudioSource>();
 	}
@@ -37,18 +37,6 @@ public class Player : MonoBehaviour {
 
         if (tellState == TellStatus.Draw)
         {
-            GameObject leftHand = GameObject.Find("LeftHand");
-            Vector3 leftHandDiff = pointA - transform.position;
-            leftHand.transform.rotation = Quaternion.FromToRotation(Vector3.right, leftHandDiff);
-
-            GameObject drawString = GameObject.Find("DrawString");
-            drawString.transform.rotation = leftHand.transform.rotation;
-
-            GameObject releaseString = GameObject.Find("ReleaseString");
-            releaseString.transform.rotation = leftHand.transform.rotation;
-
-            GameObject dummyArrow = GameObject.Find("DummyArrow");
-            dummyArrow.transform.rotation = leftHand.transform.rotation;
 
 
             if (!soundStress.isPlaying)
@@ -72,11 +60,13 @@ public class Player : MonoBehaviour {
                 }
 
                 soundStress.Stop();
-                
-                drawString.GetComponent<Renderer>().enabled = true;
-                
-                releaseString.GetComponent<Renderer>().enabled = false;
-                
+
+                GameObject drawString = GameObject.Find("DrawString");
+                GameObject releaseString = GameObject.Find("ReleaseString");
+                GameObject dummyArrow = GameObject.Find("DummyArrow");
+
+                drawString.GetComponent<Renderer>().enabled = false;
+                releaseString.GetComponent<Renderer>().enabled = true;
                 dummyArrow.GetComponent<Renderer>().enabled = false;
 
                 tellState = TellStatus.Fire;
@@ -91,9 +81,9 @@ public class Player : MonoBehaviour {
         if (tellState == TellStatus.Reload)
         {
             GameObject drawString = GameObject.Find("DrawString");
-            drawString.GetComponent<Renderer>().enabled = false;
+            drawString.GetComponent<Renderer>().enabled = true;
             GameObject releaseString = GameObject.Find("ReleaseString");
-            releaseString.GetComponent<Renderer>().enabled = true;
+            releaseString.GetComponent<Renderer>().enabled = false;
             GameObject dummyArrow = GameObject.Find("DummyArrow");
             dummyArrow.GetComponent<Renderer>().enabled = true;
             tellState = TellStatus.Idle;
