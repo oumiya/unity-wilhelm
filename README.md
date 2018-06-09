@@ -16,6 +16,11 @@ WILLIAM TELL
  https://oumiyas676.wixsite.com/denki-bu
 
 ## クレジット
+ゲームクリア時のジングル  
+パーティー開幕  
+Music is VFR  
+http://musicisvfr.com/  
+
 森の環境音  
 Forest Ambience  
 Alexander  

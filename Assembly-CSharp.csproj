@@ -64,18 +64,20 @@
     <Compile Include="Assets\Scripts\autoRotation.cs" />
     <Compile Include="Assets\Scripts\DestroyGameObject.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
-    <Compile Include="Assets\Scripts\GoGameScene.cs" />
     <Compile Include="Assets\Scripts\LeftHand.cs" />
     <Compile Include="Assets\Scripts\MouseScript.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\SceneMain.cs" />
+<<<<<<< HEAD
     <Compile Include="Assets\Scripts\Score.cs" />
     <Compile Include="Assets\Scripts\testMove.cs" />
+=======
+    <Compile Include="Assets\Scripts\ScoreAttackModeButton.cs" />
+    <Compile Include="Assets\Scripts\StoryModeButton.cs" />
+    <Compile Include="Assets\Scripts\TestMove.cs" />
+>>>>>>> a673761c0d4535799601fabbb1d4a1104aedce95
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/suzu/Documents/GitHub/unity-wilhelm/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/suzu/Documents/GitHub/unity-wilhelm/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
