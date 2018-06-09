@@ -55,6 +55,7 @@ public class SceneMain : MonoBehaviour
                 }
                 else
                 {
+                    GameController.highScore = FindObjectOfType<Score>().GetScore();
                     SceneManager.LoadScene("TitleScene");
                 }
 

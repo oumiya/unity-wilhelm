@@ -38,4 +38,10 @@ public class Score : MonoBehaviour
         score_magnification = mag;
     }
 
+    // 現在のスコアを返す
+    public int GetScore()
+    {
+        return score;
+    }
+
 }

@@ -85,8 +85,7 @@ public class Arrow : MonoBehaviour {
 
             return;
         }
-
-        if (collision.gameObject.tag.Equals("Apple"))
+        else if (collision.gameObject.tag.Equals("Apple"))
         {
             if (SceneManager.GetActiveScene().name == "ScoreAttackScene")
             {

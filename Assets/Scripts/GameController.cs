@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour
     // 初期化タイミングでインスタンスを生成
     private static readonly GameController mInstance = new GameController();
 
+    public static int highScore;
+
     // コンストラクタをprivateにすることによって他クラスからnewできないようにする
     private GameController() { }
 
