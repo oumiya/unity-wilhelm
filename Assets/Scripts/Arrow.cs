@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// 矢
@@ -57,7 +58,17 @@ public class Arrow : MonoBehaviour {
         rigidbody2D.simulated = false;
         Player player = GameObject.Find("player").GetComponent<Player>();
         player.SetStateReload();
-
+        if (SceneManager.GetActiveScene().name == "ScoreAttackScene")
+        {
+            if (collision.gameObject.tag.Equals("Apple"))
+            {
+                FindObjectOfType<Score>().AddPoint(100);
+            }
+            if (collision.gameObject.tag.Equals("Son"))
+            {
+                FindObjectOfType<Score>().AddPoint(1);
+            }
+        }
         if (collision.gameObject.tag.Equals("Son"))
         {
             Instantiate(blood, transform.position, Quaternion.identity);

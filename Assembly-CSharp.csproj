@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\MouseScript.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\SceneMain.cs" />
+    <Compile Include="Assets\Scripts\Score.cs" />
     <Compile Include="Assets\Scripts\ScoreAttackModeButton.cs" />
     <Compile Include="Assets\Scripts\StoryModeButton.cs" />
     <Compile Include="Assets\Scripts\TestMove.cs" />
